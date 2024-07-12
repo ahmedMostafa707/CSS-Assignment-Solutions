@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Assignment</title>
+    <style>
+      table {
+        width: 600px;
+        margin: 100px auto;
+        border: 30px solid #eee;
+        overflow: hidden;
+        position: relative;
+      }
+
+      table::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -3;
+      }
+
+      th {
+        background-color: #fff;
+        border: 1px solid #d4d4d4;
+        padding: 15px;
+        position: relative;
+      }
+
+      th::before {
+        content: "";
+        width: calc(100% + 6px);
+        height: calc(100% + 5px);
+        background-color: #eee;
+        position: absolute;
+        top: -4px;
+        left: -3px;
+        z-index: -1;
+      }
+
+      td {
+        border: 1px solid #d4d4d4;
+        padding: 15px;
+        text-align: center;
+        position: relative;
+      }
+
+      td::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        outline: 3px solid #eee;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+      }
+
+      td::after {
+        content: "";
+        width: 100%;
+        height: 600px;
+        background-color: transparent;
+        position: absolute;
+        top: -300px;
+        left: 0;
+        z-index: -2;
+      }
+
+      /* Highlighting text and border color on hover for table data cells */
+      td:hover {
+        color: #009aff;
+        border-color: #009aff;
+      }
+
+      /* Highlighting entire row and column on hover */
+      tr:hover td,
+      td:hover::after {
+        background-color: #eee;
+      }
+    </style>
+  </head>
+
+  <body>
+    <table>
+      <tr>
+        <th>Language</th>
+        <th>Created By</th>
+        <th>Created Year</th>
+      </tr>
+      <tr>
+        <td>Python</td>
+        <td>Guido van Rossum</td>
+        <td>1991</td>
+      </tr>
+      <tr>
+        <td>Java</td>
+        <td>James Gosling</td>
+        <td>1995</td>
+      </tr>
+      <tr>
+        <td>JavaScript</td>
+        <td>Brendan Eich</td>
+        <td>1995</td>
+      </tr>
+      <tr>
+        <td>PHP</td>
+        <td>Rasmus Lerdorf</td>
+        <td>1995</td>
+      </tr>
+      <tr>
+        <td>Swift</td>
+        <td>Chris Lattner</td>
+        <td>2014</td>
+      </tr>
+    </table>
+  </body>
+</html>
